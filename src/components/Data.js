@@ -9,7 +9,7 @@ function useQuery () {
 const Data = (props) => {
     const query = useQuery();
     const navigate = useNavigate();
-    const department = query.get("department");
+    const department = query.get("dep");
     const year = query.get("year");
     const exist = year && department; // to be changed to a function
     return (
