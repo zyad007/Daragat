@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import Header from './Home/Header';
+import Selection from './Home/Selection'
+import ContactUs from './Home/ContactUs'
 
 const Home = () => {
+    
     return (
         <div>
-            Home
+            <Header/>
+            <Selection/>
+            <ContactUs/>
         </div>
     );
 }
