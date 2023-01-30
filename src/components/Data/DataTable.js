@@ -5,12 +5,10 @@ import getVisibleData from '../../selectors/getVisibleData'
 import DenseTable from './DenseTable';
 
 const DataTable = () => {
-    const { search } = useContext(DataContext);
-
-    
+    const { search, sort } = useContext(DataContext);
 
     const data = getData();
-    const visibleData = getVisibleData(data, search);
+    const visibleData = getVisibleData(data, search, sort);
     
     return (
         <DenseTable rows={visibleData}/>

@@ -23,6 +23,7 @@ export default function DenseTable({rows}) {
       setSort({prop: prop, order: false});
     }
   }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -56,6 +57,7 @@ export default function DenseTable({rows}) {
             <TableCell align="left" onClick={(e)=>  {
               sortBy("TOTAL");
             }}>Total</TableCell>
+
             <TableCell align="left">%</TableCell>
           </TableRow>
         </TableHead>
@@ -67,7 +69,7 @@ export default function DenseTable({rows}) {
             >
             <TableCell >{index+1}</TableCell>
             <TableCell align="left">{row.id}</TableCell>
-            <TableCell align="left">{row.name}</TableCell>
+            <TableCell align="right">{row.name}</TableCell>
             <TableCell align="left">{row.sub1}</TableCell>
             <TableCell align="left">{row.sub2}</TableCell>
             <TableCell align="left">{row.sub3}</TableCell>
