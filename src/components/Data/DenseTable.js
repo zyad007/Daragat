@@ -18,9 +18,10 @@ export default function DenseTable({rows}) {
   }, [sort])
   const sortBy = (prop) => {
     if(prop === sort.prop) {
-      setSort({prop: prop, order: !prop.order});
+      console.log("hey")
+      setSort({prop: prop, order: !sort.order});
     }else {
-      setSort({prop: prop, order: false});
+      setSort({prop: prop, order: true});
     }
   }
 
