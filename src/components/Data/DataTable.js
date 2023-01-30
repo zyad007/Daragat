@@ -7,6 +7,8 @@ import DenseTable from './DenseTable';
 const DataTable = () => {
     const { search } = useContext(DataContext);
 
+    
+
     const data = getData();
     const visibleData = getVisibleData(data, search);
     
