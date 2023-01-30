@@ -6,7 +6,7 @@ const FilterForm = () => {
     const { search, setSearch } = useContext(DataContext);
     return (
         <div className='filter'>
-            <TextField className='search' id="standard-basic" label="Search" variant="standard" onChange={(e) => {
+            <TextField className='search' id="standard-basic" label="Search" fullWidth onChange={(e) => {
                 setSearch(e.target.value)
             }}/>
         </div>

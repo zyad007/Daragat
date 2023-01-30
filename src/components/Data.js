@@ -18,11 +18,10 @@ const Data = () => {
     const year = query.get("year");
     const exist = year && department; // to be changed to a function
     return (
-        <div>
+        <div className='data-comp'>
             {exist? (
                 <DataContext.Provider value={ {search, setSearch, sort, setSort} }>
                     <Header department={department} year={year}/>
-                    <FilterForm />
                     <DataTable />
                 </DataContext.Provider>
             ): <h2>Not Found :(</h2>}

@@ -11,32 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .data-header {
-    padding-left: 20px;
     display: flex;
-    border: 1px solid rgb(0, 162, 255);
+    justify-content: stretch;
+    border: 1px solid #1876D2;
+    border-radius: 5px;
     margin: 5px;
-    font-family: didot, serif;
+    color: #1876D2;
 }
-.back-button {
-  height: 50px;
-  position: relative;
-  top: 8px;
-}
+
 .data-title {
   display:'inline-block';
+  margin-left: 70px;
   position: relative;
-  left: 22%;
+  top: 5px;
 }
 .filter {
   padding-left: 30px;
   padding-bottom: 20px;
   margin-top: 15px;
 }
-.search {
-  width: 500px;
-}
 .table {
-  border: 1px solid rgb(128, 128, 128);
+  border: 1px solid #1876D2;
+  border-radius: 5px;
   margin: 5px;
 }
 .a7a {
