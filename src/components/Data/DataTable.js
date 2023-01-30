@@ -18,6 +18,7 @@ const DataTable = (props) => {
                 (result) => {
                     setData(result);
                     setVisibleData(result);
+
                 }
             ).catch((error) => {
                 console.log(error);
