@@ -26,18 +26,12 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4
-
+    p: 4,
+    display: 'grid'
 };
 
 export default function LogInModal({ isOpen, setIsOpen }) {
-    const [showPassword, setShowPassword] = React.useState(false);
 
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-    const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-    };
     return (
         <Modal
             open={isOpen}
@@ -45,27 +39,15 @@ export default function LogInModal({ isOpen, setIsOpen }) {
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
         >
-            <Box sx={style}>
+            <Box sx={style} component="form">
                 <h3>Log In</h3>
-                <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-                    <TextField id="standard-basic" label="Username" variant="standard" />
-                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                    <Input
-                        id="standard-adornment-password"
-                        type={showPassword ? 'text' : 'password'}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={handleClickShowPassword}
-                                    onMouseDown={handleMouseDownPassword}
-                                >
-                                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                                </IconButton>
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
+                <TextField id="standard-basic" label="Username" variant="outlined" />
+                <TextField
+                    id="outlined-password-input"
+                    label="Password"
+                    type="password"
+                    autoComplete="current-password"
+                />
             </Box>
         </Modal>
     );

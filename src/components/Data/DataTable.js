@@ -16,16 +16,17 @@ const DataTable = (props) => {
             .then(
                 (result) => {
                     console.log(result)
-                    setData(getVisibleData(result, search, sort));
+                    setData(result);
                 }
             ).catch((error) => {
                 console.log(error);
-                const data = getData();
-                setData(getVisibleData(data, search, sort));
             })
     }, [])
 
+    useEffect(() => {
 
+        setData(getVisibleData(data, search, sort));
+    }, [search,sort])
 
     return (
         <div className='table'>
