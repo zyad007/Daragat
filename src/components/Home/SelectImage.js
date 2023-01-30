@@ -27,7 +27,7 @@ const images = [
   },
   {
     url: process.env.PUBLIC_URL + '/img/mech.jpg',
-    title: 'Mech',
+    title: 'Mechanical',
     width: '20%',
   },
 ];

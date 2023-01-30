@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import DataContext from '../../context/DataContext';
 
 const FilterForm = () => {
-    const { search, setSearch } = useContext(DataContext);
+    const { setSearch } = useContext(DataContext);
     return (
         <div className='filter'>
             <TextField className='search' id="standard-basic" label="Search" fullWidth onChange={(e) => {

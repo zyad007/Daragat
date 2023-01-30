@@ -6,7 +6,8 @@ import DenseTable from './DenseTable';
 
 const DataTable = (props) => {
     const { search, sort } = useContext(DataContext);
-    const [data, setData] = useState([]);
+    const [ data, setData ] = useState([]);
+    const [ visibleData, setVisibleData ] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost?dep=${props.dep}&year=${props.year}`)
@@ -15,21 +16,21 @@ const DataTable = (props) => {
             })
             .then(
                 (result) => {
-                    console.log(result)
-                    setData(getVisibleData(result, search, sort));
+                    setData(result);
+                    setVisibleData(result);
                 }
             ).catch((error) => {
                 console.log(error);
-                const data = getData();
-                setData(getVisibleData(data, search, sort));
             })
     }, [])
-
+    useEffect(() => {
+        setVisibleData(getVisibleData(data, search, sort))
+    }, [search, sort]) 
 
 
     return (
         <div className='table'>
-            <DenseTable rows={data} />
+            <DenseTable rows={visibleData} />
         </div>
     );
 }

@@ -19,7 +19,7 @@ function getNumericYear(year) {
         case "Four":
             return 3;
         default:
-            return undefined;
+            return 555;
     }
 }
 function getNumericDep(dep) {
@@ -35,27 +35,31 @@ function getNumericDep(dep) {
         case "Mechanical":
             return 4;
         default:
-            return undefined;
+            return 555;
     }
 }
 const Data = () => {
     const [search, setSearch] = useState('');
     const [sort, setSort] = useState({ prop:'SUB1', order:true });
-
+    const [error, setError ] = useState("")
+    
     const query = useQuery();
     const department = query.get("dep");
     const numericDepartment = getNumericDep(department);
     const year = query.get("year");
     const numericYear = getNumericYear(year);
-    const exist = year && department; // to be changed to a function
+    const exist = year && department;
+    const authenticYear = ["One", "Two", "Three", "Four"].includes(year);
+    const authenticDep = ["Communication", "Computer", "Power", "Bio Medical", "Mechanical"].includes(department);
+    const valid = exist && authenticDep && authenticYear;
     return (
         <div className='data-comp'>
-            {exist? (
-                <DataContext.Provider value={ {search, setSearch, sort, setSort} }>
+            {valid? (
+                <DataContext.Provider value={ {search, setSearch, sort, setSort, error, setError} }>
                     <Header department={department} year={year}/>
                     <DataTable dep={numericDepartment} year={numericYear}/>
                 </DataContext.Provider>
-            ): <h2>Not Found :(</h2>}
+            ): <h2>Not Found Ya 3ars :(</h2>}
             
         </div>
     );
