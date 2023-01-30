@@ -8,14 +8,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DataContext from '../../context/DataContext';
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortUp, faSortDown } from '@fortawesome/free-solid-svg-icons';
 
 export default function DenseTable({rows}) {
   const { sort, setSort } = useContext(DataContext);
   const sortBy = (prop) => {
     if(prop === sort.prop) {
-      console.log("hey")
       setSort({prop: prop, order: !sort.order});
     }else {
       setSort({prop: prop, order: true});
@@ -30,31 +29,31 @@ export default function DenseTable({rows}) {
             <TableCell sx={{ width: 10 }} >no.</TableCell>
             <TableCell sx={{ width: 50 }} align="center" onClick={(e)=>  {
               sortBy("ID");
-            }}><button>ID</button></TableCell>
+            }}><button>{sort.prop === "ID" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} ID</button></TableCell>
             <TableCell sx={{ width: 300 }} align="left" onClick={(e)=>  {
-              sortBy("ID");
-            }}><button>Name</button></TableCell>
+              sortBy("NAME");
+            }}><button>{sort.prop === "NAME" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Name</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB1");
-            }}><button>Subject 1</button></TableCell>
+            }}><button>{sort.prop === "SUB1" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 1</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB2");
-            }}><button>Subject 2</button></TableCell>
+            }}><button>{sort.prop === "SUB2" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 2</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB3");
-            }}><button>Subject 3</button></TableCell>
+            }}><button>{sort.prop === "SUB3" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 3</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB4");
-            }}><button>Subject 4</button></TableCell>
+            }}><button>{sort.prop === "SUB4" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 4</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB5");
-            }}><button>Subject 5</button></TableCell>
+            }}><button>{sort.prop === "SUB5" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 5</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB6");
-            }}><button>Subject 6</button></TableCell>
+            }}><button>{sort.prop === "SUB6" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 6</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("TOTAL");
-            }}><button>Total</button></TableCell>
+            }}><button>{sort.prop === "TOTAL" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Total</button></TableCell>
 
             <TableCell align="left">%</TableCell>
           </TableRow>

@@ -5,6 +5,9 @@ const getVisibleData = (data, search, sort) => {
         case 'ID':
             filteredData.sort((a, b) => (sort.order) ? ((a.id < b.id) ? -1 : 1) : ((a.id > b.id) ? -1 : 1))
             break;
+        case 'NAME':
+            filteredData.sort((a, b) => (sort.order) ? ((a.id < b.id) ? -1 : 1) : ((a.id > b.id) ? -1 : 1))
+            break;
         case 'SUB1':
             filteredData.sort((a, b) => (sort.order) ? ((a.sub1 < b.sub1) ? -1 : 1) : ((a.sub1 > b.sub1) ? -1 : 1))
             break;

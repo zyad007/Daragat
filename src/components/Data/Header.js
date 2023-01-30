@@ -8,7 +8,6 @@ const Header = (props) => {
         <div>
             <h2>{props.department} year: {props.year} First Semester's Grades</h2>
             <button onClick={() => {
-                click("`")
                 navigate("/")
             }}>Back</button>
         </div>
