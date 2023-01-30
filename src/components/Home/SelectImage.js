@@ -34,7 +34,7 @@ const images = [
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
   position: 'relative',
-  height: 500,
+  height: 450,
   [theme.breakpoints.down('sm')]: {
     width: '100% !important', // Overrides inline-style
     height: 100,

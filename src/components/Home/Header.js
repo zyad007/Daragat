@@ -4,6 +4,7 @@ const Header = () => {
     return (
         <div>
             <h1 className='home-title'>FEHU Grades</h1>
+            <img className="title-image" src={process.env.PUBLIC_URL + '/img/image.png'} alt='anas'/>
         </div>
     );
 }

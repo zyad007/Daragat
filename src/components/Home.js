@@ -9,7 +9,7 @@ const Home = () => {
         <div className="home">
             <Header/>
             <Selection/>
-            <h2 className='power'>Powered By AZ</h2>
+            <ContactUs/>
         </div>
     );
 }
