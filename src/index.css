@@ -20,12 +20,24 @@ code {
 .back-button {
   height: 50px;
   position: relative;
-  top: 10px;
+  top: 8px;
 }
 .data-title {
   display:'inline-block';
   position: relative;
-  left: 20%;
+  left: 22%;
+}
+.filter {
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+}
+.search {
+  width: 500px;
+}
+.table {
+  border: 1px solid rgb(128, 128, 128);
+  margin: 5px;
 }
 .a7a {
   width: 100%;

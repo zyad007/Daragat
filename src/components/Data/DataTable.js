@@ -11,7 +11,9 @@ const DataTable = () => {
     const visibleData = getVisibleData(data, search, sort);
     
     return (
-        <DenseTable rows={visibleData}/>
+        <div className='table'>
+            <DenseTable rows={visibleData}/>
+        </div>
     );
 }
 
