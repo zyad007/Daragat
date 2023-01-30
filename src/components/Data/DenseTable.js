@@ -20,6 +20,8 @@ import Paper from '@mui/material/Paper';
 // ];
 
 export default function DenseTable({rows}) {
+  
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -27,7 +29,7 @@ export default function DenseTable({rows}) {
           <TableRow>
             <TableCell sx={{ width: 10 }} >no.</TableCell>
             <TableCell sx={{ width: 50 }} align="center">Id</TableCell>
-            <TableCell sx={{ width: 300 }} align="left">Name</TableCell>
+            <TableCell sx={{ width: 300 }} align="center">Name</TableCell>
             <TableCell align="left">sub1</TableCell>
             <TableCell align="left">sub2</TableCell>
             <TableCell align="left">sub3</TableCell>
@@ -46,7 +48,7 @@ export default function DenseTable({rows}) {
             >
             <TableCell >{index+1}</TableCell>
             <TableCell align="left">{row.id}</TableCell>
-            <TableCell align="left">{row.name}</TableCell>
+            <TableCell align="right">{row.name}</TableCell>
             <TableCell align="left">{row.sub1}</TableCell>
             <TableCell align="left">{row.sub2}</TableCell>
             <TableCell align="left">{row.sub3}</TableCell>

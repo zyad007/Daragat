@@ -11,16 +11,16 @@ function useQuery () {
 }
 const Data = () => {
     const [search, setSearch] = useState('');
+    const [sort, setSort] = useState({ prop:'SUB1', order:true });
 
     const query = useQuery();
-    const navigate = useNavigate();
     const department = query.get("dep");
     const year = query.get("year");
     const exist = year && department; // to be changed to a function
     return (
         <div>
             {exist? (
-                <DataContext.Provider value={ {search, setSearch} }>
+                <DataContext.Provider value={ {search, setSearch, sort, setSort} }>
                     <Header department={department} year={year}/>
                     <FilterForm />
                     <DataTable />
