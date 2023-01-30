@@ -46,7 +46,7 @@ code {
 .title-image {
   width: 150px;
   position: relative;
-  left: 900px;
+  left: 850px;
   top:30px
 }
 .power {
@@ -59,7 +59,7 @@ code {
 .home-title {
   display: inline-block;
   font-size: 60px;
-  padding-left: 30px;
+  padding-left: 40px;
 }
 .contact {
   display: flex;

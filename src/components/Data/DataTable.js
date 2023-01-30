@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import DataContext from '../../context/DataContext';
 import getData from '../../requests/test';
 import getVisibleData from '../../selectors/getVisibleData'
@@ -6,22 +6,32 @@ import DenseTable from './DenseTable';
 
 const DataTable = () => {
     const { search, sort } = useContext(DataContext);
+    const [data, setData] = useState([]);
 
-    const data = getData();
-    const visibleData = getVisibleData(data, search, sort);
-    
+    useEffect(() => {
+        fetch("http://localhost")
+            .then(res => {
+                return res.json()
+            })
+            .then(
+                (result) => {
+                    console.log(result)
+                    setData(getVisibleData(result, search, sort));
+                }
+            ).catch((error) => {
+                console.log(error);
+                const data = getData();
+                setData(getVisibleData(data, search, sort));
+            })
+    }, [])
+
+
+
     return (
         <div className='table'>
-            <DenseTable rows={visibleData}/>
+            <DenseTable rows={data} />
         </div>
     );
 }
 
 export default DataTable;
-
-
-// <div>
-//             {
-//                 visibleData.map((row) => <p key={row.id}>{row.name}</p>)
-//             }
-//         </div>
