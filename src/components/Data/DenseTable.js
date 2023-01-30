@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,35 +7,55 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import DataContext from '../../context/DataContext';
 
-// function createData(name, calories, fat, carbs, protein) {
-//   return { name, calories, fat, carbs, protein };
-// }
 
-// const rows = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
 
 export default function DenseTable({rows}) {
+  const { sort, setSort } = useContext(DataContext);
+  React.useEffect(() => {
+    console.log(sort);
+  }, [sort])
+  const sortBy = (prop) => {
+    if(prop === sort.prop) {
+      setSort({prop: prop, order: !prop.order});
+    }else {
+      setSort({prop: prop, order: false});
+    }
+  }
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell sx={{ width: 10 }} >no.</TableCell>
-            <TableCell sx={{ width: 50 }} align="center">Id</TableCell>
-            <TableCell sx={{ width: 300 }} align="left">Name</TableCell>
-            <TableCell align="left">sub1</TableCell>
-            <TableCell align="left">sub2</TableCell>
-            <TableCell align="left">sub3</TableCell>
-            <TableCell align="left">sub4</TableCell>
-            <TableCell align="left">sub5</TableCell>
-            <TableCell align="left">sub6</TableCell>
-            <TableCell align="left">total</TableCell>
+            <TableCell sx={{ width: 50 }} align="center" onClick={(e)=>  {
+              sortBy("ID");
+            }}>Id</TableCell>
+            <TableCell sx={{ width: 300 }} align="left" onClick={(e)=>  {
+              sortBy("NAME");
+            }}>Name</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB1");
+            }}>sub1</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB2");
+            }}>sub2</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB3");
+            }}>sub3</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB4");
+            }}>sub4</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB5");
+            }}>sub5</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("SUB6");
+            }}>sub6</TableCell>
+            <TableCell align="left" onClick={(e)=>  {
+              sortBy("TOTAL");
+            }}>Total</TableCell>
             <TableCell align="left">%</TableCell>
           </TableRow>
         </TableHead>
