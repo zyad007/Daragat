@@ -22,6 +22,8 @@ code {
 .data-title {
   display:'inline-block';
   margin-left: 70px;
+  position: relative;
+  top: 5px;
 }
 .filter {
   padding-left: 30px;
