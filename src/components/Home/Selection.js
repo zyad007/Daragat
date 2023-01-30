@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SelectionContext from '../../context/SelectionContext'
-import Modal from './Modal';
+import BasicModal from './Modal';
+import ButtonBases from './SelectImage'
 
 const Selection = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +14,8 @@ const Selection = () => {
 
     return (
         <SelectionContext.Provider value={ {isOpen, setIsOpen} }>
-            <Modal department={department} />
-            <button onClick={handleSelect}>Comp</button>
-            <button onClick={handleSelect}>Mech</button>
-            <button onClick={handleSelect}>Comm</button>
-            <button onClick={handleSelect}>Elec</button>
+            <BasicModal department={department} />
+            <ButtonBases handleSelect={handleSelect}/>
         </SelectionContext.Provider>
     );
 }

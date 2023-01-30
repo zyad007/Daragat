@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import DataContext from '../../context/DataContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,36 +27,36 @@ export default function DenseTable({rows}) {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell sx={{ width: 10 }} >no.</TableCell>
+            <TableCell sx={{ width: 10 }} ><strong>no.</strong></TableCell>
             <TableCell sx={{ width: 50 }} align="center" onClick={(e)=>  {
               sortBy("ID");
-            }}><button>{sort.prop === "ID" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} ID</button></TableCell>
-            <TableCell sx={{ width: 300 }} align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "ID" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} ID</strong></Button ></TableCell>
+            <TableCell sx={{ width: 300 }} align="right" onClick={(e)=>  {
               sortBy("NAME");
-            }}><button>{sort.prop === "NAME" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Name</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "NAME" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Name</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }} align="left" onClick={(e)=>  {
               sortBy("SUB1");
-            }}><button>{sort.prop === "SUB1" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 1</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB1" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 1</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }}align="left" onClick={(e)=>  {
               sortBy("SUB2");
-            }}><button>{sort.prop === "SUB2" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 2</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB2" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 2</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }}align="left" onClick={(e)=>  {
               sortBy("SUB3");
-            }}><button>{sort.prop === "SUB3" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 3</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB3" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 3</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }}align="left" onClick={(e)=>  {
               sortBy("SUB4");
-            }}><button>{sort.prop === "SUB4" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 4</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB4" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 4</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }}align="left" onClick={(e)=>  {
               sortBy("SUB5");
-            }}><button>{sort.prop === "SUB5" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 5</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB5" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 5</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }}align="left" onClick={(e)=>  {
               sortBy("SUB6");
-            }}><button>{sort.prop === "SUB6" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 6</button></TableCell>
-            <TableCell align="left" onClick={(e)=>  {
+            }}><Button variant='text'><strong>{sort.prop === "SUB6" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Subject 6</strong></Button></TableCell>
+            <TableCell sx={{ width: 100 }}align="left" onClick={(e)=>  {
               sortBy("TOTAL");
-            }}><button>{sort.prop === "TOTAL" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Total</button></TableCell>
+            }}><Button variant='text'><strong>{sort.prop === "TOTAL" && (sort.order?<FontAwesomeIcon icon={faSortUp} /> :<FontAwesomeIcon icon={faSortDown} /> )} Total</strong></Button></TableCell>
 
-            <TableCell align="left">%</TableCell>
+            <TableCell sx={{ width: 100 }} align="left"><strong>%</strong></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -67,14 +68,14 @@ export default function DenseTable({rows}) {
             <TableCell >{index+1}</TableCell>
             <TableCell align="left">{row.id}</TableCell>
             <TableCell align="right">{row.name}</TableCell>
-            <TableCell align="left">{row.sub1}</TableCell>
-            <TableCell align="left">{row.sub2}</TableCell>
-            <TableCell align="left">{row.sub3}</TableCell>
-            <TableCell align="left">{row.sub4}</TableCell>
-            <TableCell align="left">{row.sub5}</TableCell>
-            <TableCell align="left">{row.sub6}</TableCell>
-            <TableCell align="left">{row.total}</TableCell>
-            <TableCell align="left">{parseFloat(row.total/1050*100).toPrecision(4)}%</TableCell>
+            <TableCell align="center">{row.sub1}</TableCell>
+            <TableCell align="center">{row.sub2}</TableCell>
+            <TableCell align="center">{row.sub3}</TableCell>
+            <TableCell align="center">{row.sub4}</TableCell>
+            <TableCell align="center">{row.sub5}</TableCell>
+            <TableCell align="center">{row.sub6}</TableCell>
+            <TableCell align="center">{row.total}</TableCell>
+            <TableCell align="center">{parseFloat(row.total/1050*100).toPrecision(4)}%</TableCell>
             </TableRow>
           ))}
         </TableBody>
