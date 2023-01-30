@@ -2,10 +2,7 @@ const getVisibleData = (data, search, sort) => {
     const filteredData = data.filter((row) => row.name.toLowerCase().includes(search.toLowerCase()));
 
     switch (sort.prop) {
-        case 'ID':
-            filteredData.sort((a, b) => (sort.order) ? ((a.id < b.id) ? -1 : 1) : ((a.id > b.id) ? -1 : 1))
-            break;
-        case 'NAME':
+        case 'ID' || "NAME":
             filteredData.sort((a, b) => (sort.order) ? ((a.id < b.id) ? -1 : 1) : ((a.id > b.id) ? -1 : 1))
             break;
         case 'SUB1':

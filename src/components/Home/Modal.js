@@ -8,29 +8,6 @@ import Modal from '@mui/material/Modal';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
 
-// const Modal = ({department}) => {
-//     const { isOpen, setIsOpen } = useContext(SelectionContext);
-
-//     const navigate = useNavigate();
-
-//     const nav = (e) => navigate( `/data?dep=${department}&year=${e.target.innerText}` );
-
-//     return (
-//         <ReactModal 
-//             isOpen={isOpen}
-//             shouldCloseOnOverlayClick={true}
-//             shouldCloseOnEsc={true}
-//             ariaHideApp={false}
-//             >
-//             <button onClick={() => setIsOpen(false) }>x</button>
-//             <button onClick={nav}>1</button>
-//             <button onClick={nav}>2</button>
-//             <button onClick={nav}>3</button>
-//             <button onClick={nav}>4</button>
-//         </ReactModal>
-//     );
-// }
-
 
 
 const style = {
@@ -42,16 +19,17 @@ const style = {
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
-    p: 4,
-    display: 'flex',
-    justifiyContent: 'center'
+    p: 4
     
 };
 
 export default function BasicModal({ department }) {
     const { isOpen, setIsOpen } = React.useContext(SelectionContext);
     const navigate = useNavigate();
-    const nav = (e) => navigate(`/data?dep=${department}&year=${e.target.innerText}`);
+    const capitalFirst = (text) => {
+        return text[0].toUpperCase() + text.substring(1, text.length).toLowerCase()
+    }
+    const nav = (e) => navigate(`/data?dep=${department}&year=${capitalFirst(e.target.innerText)}`);
     return (
         <Modal
             open={isOpen}
