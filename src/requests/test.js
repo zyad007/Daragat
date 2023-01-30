@@ -1,7 +1,7 @@
 const data = [
     {
-        name: "anas",
-        id:1,
+        name: "Anas Hesham Mohamed El-Sayed",
+        id:33233015,
         total: 900,
         sub1: 175,
         sub2: 180,
@@ -11,8 +11,8 @@ const data = [
         sub6: 100
     },
     {
-        name: "zyad",
-        id:2,
+        name: "Zyad Abdel-Nasser El-Sayed Ali",
+        id:33233038,
         total: 950,
         sub1: 175,
         sub2: 190,
