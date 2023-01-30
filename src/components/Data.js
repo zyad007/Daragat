@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router';
+import DataContext from '../context/DataContext';
+import DataTable from './Data/DataTable';
 import FilterForm from './Data/FilterForm';
 import Header from './Data/Header';
 
@@ -7,7 +9,9 @@ function useQuery () {
     const {search} = useLocation();
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-const Data = (props) => {
+const Data = () => {
+    const [search, setSearch] = useState('');
+
     const query = useQuery();
     const navigate = useNavigate();
     const department = query.get("dep");
@@ -16,10 +20,11 @@ const Data = (props) => {
     return (
         <div>
             {exist? (
-                <div>
+                <DataContext.Provider value={ {search, setSearch} }>
                     <Header department={department} year={year}/>
                     <FilterForm />
-                </div>
+                    <DataTable />
+                </DataContext.Provider>
             ): <h2>Not Found :(</h2>}
             
         </div>

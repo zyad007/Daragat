@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import DataContext from '../../context/DataContext';
 
-const FilterForm = (props) => {
+const FilterForm = () => {
+    const { search, setSearch } = useContext(DataContext);
     return (
         <div>
-            <input value={"anas"} onChange={(e) => {
-                console.log(e.target.value)
+            <input value={search} onChange={(e) => {
+                setSearch(e.target.value)
             }}/>
         </div>
     );
