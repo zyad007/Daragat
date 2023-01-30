@@ -6,7 +6,7 @@ import ContactUs from './Home/ContactUs'
 const Home = () => {
     
     return (
-        <div>
+        <div className="home">
             <Header/>
             <Selection/>
             <ContactUs/>

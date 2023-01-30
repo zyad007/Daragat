@@ -43,3 +43,19 @@ code {
   width: 100%;
   justify-content: center;
 }
+
+.home {
+
+}
+.power {
+  display: inline-block;
+  position: relative;
+  left: 900px;
+  font-family: monospace;
+}
+.home-title {
+  display: inline-block;
+  font-size: 60px;
+  padding-left: 30px;
+  font-family: 'Times New Roman', Times, serif
+}
