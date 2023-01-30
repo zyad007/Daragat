@@ -4,12 +4,12 @@ import getData from '../../requests/test';
 import getVisibleData from '../../selectors/getVisibleData'
 import DenseTable from './DenseTable';
 
-const DataTable = () => {
+const DataTable = (props) => {
     const { search, sort } = useContext(DataContext);
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost")
+        fetch(`http://localhost?dep=${props.dep}&year=${props.year}`)
             .then(res => {
                 return res.json()
             })
