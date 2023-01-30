@@ -13,9 +13,6 @@ import DataContext from '../../context/DataContext';
 
 export default function DenseTable({rows}) {
   const { sort, setSort } = useContext(DataContext);
-  React.useEffect(() => {
-    console.log(sort);
-  }, [sort])
   const sortBy = (prop) => {
     if(prop === sort.prop) {
       console.log("hey")
@@ -33,31 +30,31 @@ export default function DenseTable({rows}) {
             <TableCell sx={{ width: 10 }} >no.</TableCell>
             <TableCell sx={{ width: 50 }} align="center" onClick={(e)=>  {
               sortBy("ID");
-            }}>Id</TableCell>
+            }}><button>ID</button></TableCell>
             <TableCell sx={{ width: 300 }} align="left" onClick={(e)=>  {
-              sortBy("NAME");
-            }}>Name</TableCell>
+              sortBy("ID");
+            }}><button>Name</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB1");
-            }}>sub1</TableCell>
+            }}><button>Subject 1</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB2");
-            }}>sub2</TableCell>
+            }}><button>Subject 2</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB3");
-            }}>sub3</TableCell>
+            }}><button>Subject 3</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB4");
-            }}>sub4</TableCell>
+            }}><button>Subject 4</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB5");
-            }}>sub5</TableCell>
+            }}><button>Subject 5</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("SUB6");
-            }}>sub6</TableCell>
+            }}><button>Subject 6</button></TableCell>
             <TableCell align="left" onClick={(e)=>  {
               sortBy("TOTAL");
-            }}>Total</TableCell>
+            }}><button>Total</button></TableCell>
 
             <TableCell align="left">%</TableCell>
           </TableRow>
@@ -78,7 +75,7 @@ export default function DenseTable({rows}) {
             <TableCell align="left">{row.sub5}</TableCell>
             <TableCell align="left">{row.sub6}</TableCell>
             <TableCell align="left">{row.total}</TableCell>
-            <TableCell align="left">{row.percentage}</TableCell>
+            <TableCell align="left">{parseFloat(row.total/1050*100).toPrecision(4)}%</TableCell>
             </TableRow>
           ))}
         </TableBody>
