@@ -13,7 +13,7 @@ const DataTable = () => {
     return (
         <div>
             {
-                data.map((row) => <p key={row.id}>{row.name}</p>)
+                visibleData.map((row) => <p key={row.id}>{row.name}</p>)
             }
         </div>
     );
