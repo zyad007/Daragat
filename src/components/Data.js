@@ -24,7 +24,7 @@ function getNumericYear(year) {
 }
 function getNumericDep(dep) {
     switch(dep) {
-        case "Communincation":
+        case "Communication":
             return 0;
         case "Computer":
             return 1;
@@ -59,7 +59,7 @@ const Data = () => {
                     <Header department={department} year={year}/>
                     <DataTable dep={numericDepartment} year={numericYear}/>
                 </DataContext.Provider>
-            ): <h2>Not Found Ya 3ars :(</h2>}
+            ): <h2>Not Found Ya 3r.. :(</h2>}
             
         </div>
     );

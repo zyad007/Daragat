@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 const images = [
   {
     url: process.env.PUBLIC_URL + '/img/comm.jpeg',
-    title: 'Communincation',
+    title: 'Communication',
     width: '20%',
   },
   {

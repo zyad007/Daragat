@@ -15,7 +15,9 @@ export default function LogInModal({ isOpen, setIsOpen }) {
             <form className='formm' onSubmit={(e) => {
                 e.preventDefault();
                 if(e.target.elements.username.value === 'AZ' && e.target.elements.pass.value === 'hacker 3rs')  {
-                    nav('/admin');
+                    nav('/admin?id=7332155');
+                }else {
+                    console.log('enta meen yad!!')
                 }
             }}>
                 <h3 style={{paddingLeft: '75px'}}>Log In</h3>
