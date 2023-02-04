@@ -54,8 +54,13 @@ code {
 .title-image {
   width: 150px;
   position: relative;
-  left: 850px;
-  top:30px
+  top:30px;
+  height: 120px;
+  margin-right: 20px;
+}
+.home-header {
+  display: flex;
+  justify-content: space-between;
 }
 .power {
   display: inline-block;
