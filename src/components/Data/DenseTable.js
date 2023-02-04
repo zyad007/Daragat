@@ -39,16 +39,22 @@ export default function DenseTable({ rows }) {
             }}><Button variant='text'><strong>{sort.prop === "NAME" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Name</strong></Button></TableCell>
             <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
               sortBy("SUB1");
-            }}><Button variant='text'><strong>{sort.prop === "SUB1" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)}{headers.subject1}</strong></Button></TableCell>
+            }}><Button variant='text'><strong>{sort.prop === "SUB1" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 1</strong></Button></TableCell>
             <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
               sortBy("SUB2");
-            }}><Button variant='text'><strong>{sort.prop === "SUB2" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)}{headers.subject2}</strong></Button></TableCell>
+            }}><Button variant='text'><strong>{sort.prop === "SUB2" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 2</strong></Button></TableCell>
             <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
               sortBy("SUB3");
-            }}><Button variant='text'><strong>{sort.prop === "SUB3" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)}{headers.subject3}</strong></Button></TableCell>
+            }}><Button variant='text'><strong>{sort.prop === "SUB3" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 3</strong></Button></TableCell>
             <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
               sortBy("SUB4");
-            }}><Button variant='text'><strong>{sort.prop === "SUB4" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)}{headers.subject4}</strong></Button></TableCell>
+            }}><Button variant='text'><strong>{sort.prop === "SUB4" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 4</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
+              sortBy("SUB5");
+            }}><Button variant='text'><strong>{sort.prop === "SUB5" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 5</strong></Button></TableCell>
+            <TableCell sx={{ width: 150 }} align="left" onClick={(e) => {
+              sortBy("SUB6");
+            }}><Button variant='text'><strong>{sort.prop === "SUB6" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Subject 6</strong></Button></TableCell>
             <TableCell sx={{ width: 100 }} align="left" onClick={(e) => {
               sortBy("TOTAL");
             }}><Button variant='text'><strong>{sort.prop === "TOTAL" && (sort.order ? <FontAwesomeIcon icon={faSortUp} /> : <FontAwesomeIcon icon={faSortDown} />)} Total</strong></Button></TableCell>
@@ -65,10 +71,12 @@ export default function DenseTable({ rows }) {
               <TableCell >{index + 1}</TableCell>
               <TableCell align="left">{row.id}</TableCell>
               <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="center">{row.subject1}</TableCell>
-              <TableCell align="center">{row.subject2}</TableCell>
-              <TableCell align="center">{row.subject3}</TableCell>
-              <TableCell align="center">{row.subject4}</TableCell>
+              <TableCell align="center">{row.sub1}</TableCell>
+              <TableCell align="center">{row.sub2}</TableCell>
+              <TableCell align="center">{row.sub3}</TableCell>
+              <TableCell align="center">{row.sub4}</TableCell>
+              <TableCell align="center">{row.sub5}</TableCell>
+              <TableCell align="center">{row.sub6}</TableCell>
               <TableCell align="center">{row.total}</TableCell>
               <TableCell align="center">{row.percent}%</TableCell>
             </TableRow>
