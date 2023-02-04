@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMatch, useSearchParams } from 'react-router-dom';
+import Updates from './Admin/updates';
 
 const Admin = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -7,10 +8,10 @@ const Admin = () => {
     return (
         <div>
             {searchParams.get('id') === '7332155'? (
-                <div>admin</div>
+                <Updates />
             ): <h2>Not Found Ya 3r.. :(</h2>}
         </div>
     );
 }
 
-export default Admin;
+export default Admin; 

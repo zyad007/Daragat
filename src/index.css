@@ -78,3 +78,7 @@ code {
   display: flex;
   justify-content: space-between;
 }
+.updates {
+  padding: 30px;
+  padding-top: 0;
+}
