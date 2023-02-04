@@ -40,7 +40,7 @@ function getNumericDep(dep) {
 }
 const Data = () => {
     const [search, setSearch] = useState('');
-    const [sort, setSort] = useState({ prop:'SUB1', order:true });
+    const [sort, setSort] = useState({ prop:'ID', order:false });
     const [error, setError ] = useState("")
     
     const query = useQuery();

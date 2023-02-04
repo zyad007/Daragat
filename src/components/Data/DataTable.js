@@ -9,6 +9,7 @@ const DataTable = (props) => {
     const [ visibleData, setVisibleData ] = useState([]);
     const prod = "https://silly-cannon.74-50-88-98.plesk.page?dep=";
     const dev = "http://localhost:5555?dep=";
+    let [headers, setHeaders] =useState({subject1:'',subject2:'',subject3:'',subject4:''});
     useEffect(() => {
         fetch(dev.concat(`${props.dep}&year=${props.year}`))
             .then(res => {
@@ -16,6 +17,7 @@ const DataTable = (props) => {
             })
             .then(
                 (result) => {
+                    setHeaders(result.shift())
                     setData(result);
                     setVisibleData(result);
                 }
@@ -29,7 +31,7 @@ const DataTable = (props) => {
 
     return (
         <div className='table'>
-            <DenseTable rows={visibleData} />
+            <DenseTable rows={visibleData} headers={headers}  />
         </div>
     );
 }
