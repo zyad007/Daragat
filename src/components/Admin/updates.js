@@ -18,6 +18,22 @@ const Updates = () => {
                 console.log(error);
             })
     }
+    function updateAll() {
+        for(let i=0;i<5;i++) {
+            for(let j=0;j<4;j++) {
+                updateRequest(i,j)
+            }
+        }
+        fetch('https://pensive-haslett.74-50-88-98.plesk.page?type=stats')
+            .then(res => res.json())
+            .then(result => {
+                setCounters(result.counters);
+            })
+            .catch((error) => {
+                setError(`Error Occured!\n${error}`)
+                console.log(error);
+            })
+    }
     useEffect(() => {
         fetch('https://pensive-haslett.74-50-88-98.plesk.page?type=reports')
             .then(res => res.text())
@@ -42,6 +58,7 @@ const Updates = () => {
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
             <div className='updates'>
                 <h1>Updates</h1>
+                <Button onClick={() => updateAll()}>Refresh All</Button>
                 <p>{error}</p>
                 <h3>Communication</h3>
                 <Button onClick={() => updateRequest(0, 0)}>One</Button>

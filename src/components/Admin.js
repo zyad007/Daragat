@@ -9,7 +9,7 @@ const Admin = () => {
         <div>
             {searchParams.get('id') === '7332155'? (
                 <Updates />
-            ): <h2>Not Found Ya 3r.. :(</h2>}
+            ): <h2>Not Found!</h2>}
         </div>
     );
 }
