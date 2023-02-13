@@ -3,7 +3,7 @@ import Modal from '@mui/material/Modal';
 
 const FeedBackModal = ({ isOpen, setIsOpen }) => {
 
-    const prod = "https://silly-cannon.74-50-88-98.plesk.page/";
+    const prod = "https://pensive-haslett.74-50-88-98.plesk.page/";
     const dev = "http://localhost:5555/";
 
     return (
@@ -20,7 +20,7 @@ const FeedBackModal = ({ isOpen, setIsOpen }) => {
                         title: e.currentTarget.elements[0].value,
                         body: e.currentTarget.elements[1].value
                     }
-                    fetch(dev.concat('report'),
+                    fetch(prod,
                     {
                         method: 'POST',
                         headers: {

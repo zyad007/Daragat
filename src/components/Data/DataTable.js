@@ -7,11 +7,11 @@ const DataTable = (props) => {
     const { search, sort } = useContext(DataContext);
     const [ data, setData ] = useState([]);
     const [ visibleData, setVisibleData ] = useState([]);
-    const prod = "https://silly-cannon.74-50-88-98.plesk.page?dep=";
-    const dev = "http://localhost:5555?dep=";
+    const prod = "https://pensive-haslett.74-50-88-98.plesk.page/?type=root&dep=";
+    const dev = "http://localhost:5555?type=root&dep=";
     let [headers, setHeaders] =useState({subject1:'',subject2:'',subject3:'',subject4:''});
     useEffect(() => {
-        fetch(dev.concat(`${props.dep}&year=${props.year}`))
+        fetch(prod.concat(`${props.dep}&year=${props.year}`))
             .then(res => {
                 return res.json()
             })
