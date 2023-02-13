@@ -59,7 +59,7 @@ const Data = () => {
                     <Header department={department} year={year}/>
                     <DataTable dep={numericDepartment} year={numericYear}/>
                 </DataContext.Provider>
-            ): <h2>Not Found Ya 3r.. :(</h2>}
+            ): <h2>Not Found!</h2>}
             
         </div>
     );
