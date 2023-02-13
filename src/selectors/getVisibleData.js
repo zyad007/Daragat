@@ -17,6 +17,12 @@ const getVisibleData = (data, search, sort) => {
         case 'SUB4':
             filteredData.sort((a, b) => (sort.order) ? ((a.subject4 < b.subject4) ? -1 : 1) : ((a.subject4 > b.subject4) ? -1 : 1))
             break;
+        case 'SUB5':
+        filteredData.sort((a, b) => (sort.order) ? ((a.subject5 < b.subject5) ? -1 : 1) : ((a.subject5 > b.subject5) ? -1 : 1))
+        break;
+        case 'SUB6':
+        filteredData.sort((a, b) => (sort.order) ? ((a.subject6 < b.subject6) ? -1 : 1) : ((a.subject6 > b.subject6) ? -1 : 1))
+        break;
         case 'TOTAL':
             filteredData.sort((a, b) => (sort.order) ? ((a.total < b.total) ? -1 : 1) : ((a.total > b.total) ? -1 : 1))
             break;
